@@ -7,12 +7,14 @@ Questo repository contiene il backend pronto all'uso per il progetto finale del 
 ### Installazione
 
 1. Clona il repository:
+
 ```bash
 git clone https://github.com/boolean-it/progetto-finale-spec-frontend-back.git
 cd progetto-finale-spec-frontend-back
 ```
 
 2. Installa le dipendenze:
+
 ```bash
 npm install
 ```
@@ -24,6 +26,7 @@ Il backend si basa sulle risorse definite nel file `types.ts`. Per configurare l
 1. Nella cartella principale del progetto, crea un file `types.ts` con la definizione dei tipi delle tue risorse
 
 Esempio:
+
 ```typescript
 export type Product = {
   title: string;
@@ -33,6 +36,7 @@ export type Product = {
 ```
 
 **Note importanti:**
+
 - Ogni risorsa DEVE includere almeno le proprietà base `title` e `category`
 - Le proprietà `id`, `createdAt` e `updatedAt` vengono aggiunte in automatico dal server
 - Puoi aggiungere tutte le proprietà aggiuntive che desideri
@@ -55,15 +59,16 @@ Per ogni risorsa definita in `types.ts` (es. per il tipo `Product`), sono dispon
 
 ### Endpoints
 
-| Metodo | Endpoint            | Descrizione                                | Query Parameters                  |
-|--------|---------------------|--------------------------------------------|------------------------------------|
-| GET    | `/{tipo}s`          | Lista di tutti i record                    | `search`, `category`               |
-| GET    | `/{tipo}s/:id`      | Dettaglio di un singolo record             | -                                  |
-| POST   | `/{tipo}s`          | Creazione di un nuovo record              | -                                  |
-| PUT    | `/{tipo}s/:id`      | Aggiornamento di un record esistente       | -                                  |
-| DELETE | `/{tipo}s/:id`      | Eliminazione di un record                  | -                                  |
+| Metodo | Endpoint       | Descrizione                          | Query Parameters     |
+| ------ | -------------- | ------------------------------------ | -------------------- |
+| GET    | `/{tipo}s`     | Lista di tutti i record              | `search`, `category` |
+| GET    | `/{tipo}s/:id` | Dettaglio di un singolo record       | -                    |
+| POST   | `/{tipo}s`     | Creazione di un nuovo record         | -                    |
+| PUT    | `/{tipo}s/:id` | Aggiornamento di un record esistente | -                    |
+| DELETE | `/{tipo}s/:id` | Eliminazione di un record            | -                    |
 
 ### Esempio di uso delle query:
+
 - `/products?search=iphone` - Cerca prodotti con "iphone" nel titolo
 - `/products?category=tech` - Filtra prodotti nella categoria "tech"
 - `/products?search=iphone&category=tech` - Combina ricerca e filtro
@@ -77,6 +82,7 @@ I dati vengono salvati in file JSON nella cartella root del progetto. Per ogni t
 - E così via...
 
 Puoi inserire dati iniziali:
+
 1. Tramite le API (usando Postman, Insomnia o fetch)
 2. Modificando direttamente i file JSON
 
